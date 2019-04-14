@@ -5,9 +5,21 @@ Let's get started. The first thing to do is connect to the database.The function
 
 ------------
 ```php
-require_once(config.php);
 require_once(db.php);
 
 $db = DB::getInstance();
 $db->query("SELECT * FROM `TABLE`");
+```
+
+------------
+
+# PDO
+
+```php
+require('db.pdo.php');
+$db = DB::getInstance();
+
+    $visitor_data = $db->query("SELECT * FROM users WHERE id = :id", array(
+      'id' => 5  
+    ));
 ```
